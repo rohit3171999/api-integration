@@ -1,14 +1,16 @@
 from fastapi import FastAPI
 app = FastAPI()
 
-
 @app.get("/")
 def home():
-    return {"message": "Working Fine!"}
+    return {"message": "Working fine!"}
 
-@app.get("/about")
-def about():
-    return {"message": "This is a simple FastAPI application."}
-@app.get("/contact")
-def contact():  
-    return {"message": "Contact us at 9873753135"}   
+students = [
+    {"id": 1, "name": "Rohit"},
+    {"id": 2, "name": "Aman"},
+    {"id": 3, "name": "Priya"}
+]
+
+@app.get("/students")
+def get_students():
+    return students 
